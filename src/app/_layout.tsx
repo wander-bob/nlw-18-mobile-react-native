@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {
   useFonts,
   Rubik_400Regular,
@@ -8,7 +9,6 @@ import {
 } from '@expo-google-fonts/rubik';
 
 import { colors } from '@/styles/theme';
-import { Text, View } from 'react-native';
 import { Loading } from '@/components/loading';
 
 export default function Layout() {
@@ -24,13 +24,15 @@ export default function Layout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        contentStyle: {
-          backgroundColor: colors.gray[100],
-        },
-      }}
-    />
+    <GestureHandlerRootView>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: {
+            backgroundColor: colors.gray[100],
+          },
+        }}
+      />
+    </GestureHandlerRootView>
   );
 }
