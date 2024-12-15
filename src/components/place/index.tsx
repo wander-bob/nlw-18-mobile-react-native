@@ -11,6 +11,8 @@ export type PlaceProps = {
   coupons: string;
   cover: string;
   address: string;
+  latitude: number;
+  longitude: number;
 };
 
 type Props = TouchableOpacityProps & {
@@ -29,7 +31,12 @@ export function Place({ data, ...rest }: Props) {
       />
       <View style={styles.content}>
         <Text style={styles.name}>{data.name}</Text>
-        <Text style={styles.description}>{data.description}</Text>
+        <Text
+          style={styles.description}
+          numberOfLines={2}
+        >
+          {data.description}
+        </Text>
 
         <View style={styles.footer}>
           <IconTicket
